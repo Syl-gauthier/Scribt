@@ -2,7 +2,7 @@
   "name": "scribt",
   "version": "0.1.0",
   "description": "npm WARN scribt@0.1.0 No description",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "mocha test -u bdd -R spec",
     "pretest": "npm run lint",
@@ -25,7 +25,7 @@
     "type": "git",
     "url": "git+https://github.com/syl-gauthier/scribt.git"
   },
-  "author": "syl-gauthier",
+  "author": "Syl-gauthier",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/syl-gauthier/scribt/issues"
