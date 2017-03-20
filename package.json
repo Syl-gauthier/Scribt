@@ -1,10 +1,25 @@
 {
   "name": "scribt",
   "version": "0.1.0",
-  "description": "",
+  "description": "npm WARN scribt@0.1.0 No description",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test -u bdd -R spec",
+    "pretest": "npm run lint",
+    "start": "node server.js",
+    "start:dev": "parallelshell 'node server.js 4000' 'npm run watch:bundle'",
+    "prestart:dev": "npm run compile && npm run build",
+    "lint": "jshint *.js **/*.js",
+    "compile": "npm run compile:ts",
+    "precompile": "npm run compile:clean",
+    "compile:ts": "tsc --outDir ./lib --module commonjs ./src/typescript/app.ts",
+    "compile:clean": "rimraf lib/*",
+    "build": "npm run build:less && npm run build:bundle",
+    "prebuild": "npm run build:clean",
+    "build:less": "lessc client/less/style.less public/css/style.css",
+    "build:bundle": "browserify ./client/js/app.js | uglifyjs -mc > ./public/js/bundle.js",
+    "build:clean": "rimraf public/css/*, public/js/*",
+    "watch:bundle": "watchify ./client/js/app.js -o ./public/js/bundle.js -v"
   },
   "repository": {
     "type": "git",
@@ -15,5 +30,22 @@
   "bugs": {
     "url": "https://github.com/syl-gauthier/scribt/issues"
   },
-  "homepage": "https://github.com/syl-gauthier/scribt#readme"
+  "homepage": "https://github.com/syl-gauthier/scribt#readme",
+  "devDependencies": {
+    "browserify": "^14.1.0",
+    "jshint": "^2.9.4",
+    "less": "^2.7.2",
+    "mocha": "^3.2.0",
+    "parallelshell": "^2.0.0",
+    "rimraf": "^2.6.1",
+    "should": "^11.2.1",
+    "typescript": "^2.2.1",
+    "uglifyjs": "^2.4.10",
+    "watchify": "^3.9.0"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "express": "^4.15.2",
+    "jquery": "^3.2.0"
+  }
 }
