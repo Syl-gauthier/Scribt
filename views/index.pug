@@ -1,0 +1,49 @@
+doctype html
+html
+    head
+        block title
+            title Scribt
+        
+        meta(charset='utf-8')
+        
+        //- bootstrap css from node_modules/bootstrap/dist
+        link(rel='stylesheet', href='/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/css/bootstrap-theme.min.css')
+        
+        //-
+        link(rel='stylesheet', href='/css/style.css')
+        
+        //For touch-type on mobile
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        
+    body
+        .navbar.navbar-inverse.navbar-fixed-top
+            .container-fluid
+                .navbar-header
+                    button.navbar-toggle.collapsed(data-toggle='collapse' data-target='#navbar' aira-expanded='false' aria-controls='navbar')
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.navbar-brand(href='#') scribt
+                #navbar.collapse.navbar-collapse
+                    ul.nav.navbar-nav
+                        li.active: a(href='#') home
+                        li: a(href='#') learning
+                        li: a(href='#') sharing
+                        li: a(href='#') helping
+                    ul.nav.navbar-nav.navbar-right
+                        li: a(href='#') user profile
+                    form.navbar-form.navbar-right
+                        .input-group
+                            
+                            input.form-control(type='text' placeholder='Search')
+                            .input-group-btn
+                                button.btn.btn-default(type='button') Word
+                                button.btn.btn-default.dropdown-toggle.thin-caret(type='button' data-toggle="dropdown"): .caret
+                                ul.dropdown-menu
+                                    li: a(href='#') List
+                                    li: a(href='#') User
+                                    li: a(href='#') Question
+
+        script(src='js/bundle.js')
