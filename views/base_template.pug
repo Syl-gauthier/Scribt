@@ -25,15 +25,15 @@ html
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.navbar-brand(href='#') scribt
+          a.navbar-brand(href='/home') scribt
         #navbar.collapse.navbar-collapse
           ul.nav.navbar-nav
-            li.active: a(href='#') home
-            li: a(href='#') learning
-            li: a(href='#') sharing
-            li: a(href='#') helping
+            li: a(href='/home') home
+            li: a(href='/learn') learning
+            li: a(href='/share') sharing
+            li: a(href='/help') helping
           ul.nav.navbar-nav.navbar-right
-            li: a(href='#') user profile
+            li: a(href='/share/profil?u=session') user profile
           form.navbar-form.navbar-right
             .input-group
               input.form-control(type='text' placeholder='Search')
@@ -45,4 +45,5 @@ html
                   li: a(href='#') User
                   li: a(href='#') Question
                   
+    block body
     script(src='js/bundle.js')
