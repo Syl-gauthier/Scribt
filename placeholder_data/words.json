@@ -1,0 +1,20 @@
+{
+  [
+    {
+      english: 'example 1',
+      french: 'example 1'
+    }, {
+      english: 'example 2',
+      french: 'example 2'
+    }, {
+      english: 'example 3',
+      french: 'example 3'
+    }, {
+      english: 'example 4',
+      french: 'example 4'
+    }, {
+      english: 'example 5',
+      french: 'example 5'
+    }
+  ]
+}
